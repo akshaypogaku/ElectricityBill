@@ -8,11 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SplashViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        perform(#selector(self.showNavController), with: nil, afterDelay: 3)
+        
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    @objc func showNavController()
+    {
+        print("hi")
+        performSegue(withIdentifier: "SplashToLogin", sender: self)
     }
 
     override func didReceiveMemoryWarning() {
